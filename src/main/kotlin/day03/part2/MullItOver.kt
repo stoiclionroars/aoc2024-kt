@@ -17,8 +17,8 @@ fun main() {
     val regex = Regex("""mul\((\d+),\s*(\d+)\)""")
 
     var sum = 0
-    var newLine= trick(line, "don", "do", "do")
-    var newLine2 = trick(newLine, "don", "\n", "")
+    var newLine= trick(line, "don't()", "\n", "")
+    var newLine2 = trick(newLine, "don't()", "do()", "do()")
 
     println(newLine2)
     val matches = regex.findAll(newLine2)
