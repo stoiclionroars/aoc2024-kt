@@ -14,7 +14,7 @@ fun main() {
 
     val line = File(input2).readText()
 
-    val regex = Regex("""mul\((\d+),\s*(\d+)\)""")
+    val regex = Regex("""mul\((\d{1,3}),(\d{1,3})\)""")
     val newLine = line.replace(Regex("""don't\(\).*?\n|don't\(\).*?do\(\)"""), "")
 
     var sum = 0
