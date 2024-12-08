@@ -15,13 +15,10 @@ fun main() {
     val line = File(input2).readText()
 
     val regex = Regex("""mul\((\d+),\s*(\d+)\)""")
+    val newLine = line.replace(Regex("""don't\(\).*?\n|don't\(\).*?do\(\)"""), "")
 
     var sum = 0
-    var newLine= trick(line, "don't()", "\n", "")
-    var newLine2 = trick(newLine, "don't()", "do()", "do()")
-
-    println(newLine2)
-    val matches = regex.findAll(newLine2)
+    val matches = regex.findAll(newLine)
     val multiplications = matches.map { matchResult ->
         val (num1, num2) = matchResult.destructured
         println("${num1.toInt()} ${num2.toInt()}")
